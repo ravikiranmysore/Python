@@ -1,4 +1,5 @@
 #if elif else
+'''
 marks= 50
 if (marks>80) :
     print "Grade A"
@@ -8,3 +9,44 @@ elif (marks > 40) and (marks <= 60):
     print "Grade C"
 else:
     print "Grade D"
+
+def getInteger(): # we will go down and intend code
+    result = int(input("Please enter any no : "))
+    return result
+
+
+#Adding a parameters
+def getInteger(promt): # we will go down and intend code
+    result = int(input(promt))
+    return result
+
+def Main():
+    print 'Started'
+    output = getInteger("Please enter an int: ")
+    output2 = getInteger("Another int  : ")
+    print output
+
+#MAIN function
+if __name__ == "__main__":
+    Main()
+'''
+
+#Iterations
+def Main():
+    for step in range(5):
+        print step
+
+    words = ['cat','bat','hat','sat']
+    for word in words:
+        print word
+
+    num = 0
+    while num <= 0:
+        num = int(input('Please enter a +ve integer : '))
+
+    while True:
+        print 'hello'
+
+if __name__ == "__main__":
+    Main()
+

@@ -1,0 +1,28 @@
+'''
+# Read
+def Main():
+    f = open("C:\\Users\\Ravi\\Desktop\\1.txt", "r+")
+    for line in f:
+        #print line # THIS IS TO READ LINE
+        print line.strip("\n")
+    f.close()
+'''
+
+#Write
+
+def Main():
+    words = ['cat','sat','bat','map']
+
+    with open("C:\\Users\\Ravi\\Desktop\\words.txt", 'w+') as f:
+        for word in words:
+            f.write(word + '\n')
+
+if __name__ == "__main__":
+    Main()
+
+
+fp = open("C:\\Users\\Ravi\\Desktop\\edureka.txt", 'w+')
+fp.write("this goes inside text file")
+fp.seek(0)
+print fp.read()
+fp.close()

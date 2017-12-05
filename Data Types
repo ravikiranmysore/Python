@@ -1,0 +1,91 @@
+Datatypes
+1.Immutable : Numbers,Strings,Tuples ---> Fixed you cant modify
+2.Mutable : Lists, Dictionary,Sets
+
+# Strings
+string1 = "P1"
+string2 = " P2"
+string3 = " P3"
+string4 = "65653"
+string3 = "Printing3ggggg"
+#Concatenation
+print string1+string2
+
+#repetation
+print string2*3
+
+#Slicing
+print string3[:2]
+
+#indexing
+print string3[1] + string3[6] #last and first,starts with 0
+print string3[1:6]
+
+#Type specific methods
+# find,replace,split,count
+print string3.count('g',0,14)
+print string3.find('in')
+
+#upper,max,min,isalpha
+print string3.isalpha()
+print string4.isdigit()  #space,if any letters cause error
+
+
+#Tuples
+my_tup = ('raj', 'rani','mantri')
+print my_tup+('Ravi','Kiran') # only added while printing
+
+print my_tup * 3 #replicates 3 times
+
+print my_tup[-1]  #indexing
+
+print my_tup[1:5] # only prints till the range even if you add [1: 500000000]
+
+#-----------MUTABLE
+#LISTS
+# append(value),extend(list),insert(index,value),pop()
+my_list = ['Green','Red','Blue''Pink']
+
+my_list.append('Grey')
+print my_list
+
+#extend
+my_list.extend(['white','black'])
+print my_list # cant print extend in same line
+
+
+#Dictionaty
+#empty dictionary,dictionary with integer key,mixed key,sequence
+#Accessing dictionary,len(),key(),values()
+#items,get,update,pop
+
+my_Dictionary = { 1:'Green',
+                  2:'Blue',
+                  3:'Black',
+                  2:'Blue'} #discarded if duplicate
+print my_Dictionary
+
+print my_Dictionary[2]   # to get key value
+
+print my_Dictionary.values() # all items
+print my_Dictionary.keys()
+
+my_Dictionary.update({4:"Magenta"})
+print my_Dictionary
+
+#Sets : unordered collection, no duplicates,only unique elements
+my_sets ={1,2,5,7,9,5,15,2,7}
+#print my_sets #in output no duplicates prints
+
+
+#Creating set,union(all entries),intersection(only those intersecting),difference(what is left)
+my_set_1 = {1,45,76,1,2,5,7,9,5,15,2,7}
+#print my_set_1
+print "Union : ",my_sets | my_set_1
+print "Intersection : ",my_sets & my_set_1
+print "Diff : ",my_sets - my_set_1
+
+
+x1 = {"a","b","c","d","e"}
+y = {"c","d","e","f","g"}
+print x1.intersection(y)

@@ -1,0 +1,63 @@
+1.Arithematic operators
+2.Assignment operators
+3.Comparison operator.
+4.Logical Operator
+5.Bitwise operator
+6.Identity operator
+7.Membership Operators
+
+-----
+
+#arithematic and substraction
+''' this is a multiline comment'''
+num1 = 10
+num2 = 20
+print "Num 1 + num2 = ",num1+num2
+print num2+num1
+print num1-num2
+
+#Assignement operator
+num3 = num1 + num2
+num3+=num2
+print num3
+num3 /= num3
+print num3
+
+#Comparison operator
+print "is num 2 > num 2 : ", num3 > num2
+print "is num 1 = num 2 : ", num1 == num2
+print "is num 3 != num 2 : ", num3 != num2
+
+#Logical operator : and, or and not
+#not of 1 is true/false
+x = True # capital as these are reserved keywords
+y = False
+
+print "x and y :", x and y
+print "x or y: ", x or y
+print "not of y : ", not y
+
+#Bitwise operator
+# a | b , a & b, a ^ b
+num4 = 6       # 110
+num5 = 2      # 010
+'''
+print "Bitwise and : ", num4 & num5
+print "Bitwise or : ", num4 | num5
+print "Bitwise xor : ", num4 ^ num5
+'''#left shift and right shift
+print "numbner 4 right shift by 2 :", num4 >> 2
+print "numbner 5 left shift by 2: ", num5 << 2
+
+#identity operator
+#is , is not
+print num4 is 6
+print num5 is not 2
+
+#Membership operator
+#'List and tuple' ---> this is like array and list
+# in and Not in
+x = [10,2,3,4,5]
+print "\n"
+print "num5 is 2" , num5 in x
+print "num1 in 10", num1 not in x, "it is in X"

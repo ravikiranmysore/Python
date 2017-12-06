@@ -1,0 +1,56 @@
+
+class MyClass:
+    number = 0
+    name = "Noname "
+
+def Main():
+    me = MyClass()
+    me.name = 2542
+    me.name = "abcd "
+
+    friend = MyClass()
+    friend.name = "Ravi "
+    friend.number = 54
+
+    empty = MyClass()
+
+    print "Name : " + me.name + str(me.number)
+    print "Friend : " + friend.name + str(friend.number)
+    print "Empty : " + empty.name + str(empty.number)
+
+class Vector2D:
+    x = 0.0
+    y = 0.0
+
+    def Set(self, x ,y ):
+        self.x = x
+        self.y = y
+
+def Main1():
+    vec = Vector2D()
+    vec.Set(5,6)
+    print "X : " + str(vec.x) + "\nY : " + str(vec.y)
+
+
+if __name__ == '__main__':
+    Main()
+
+if __name__ == '__main__':
+    Main1()
+
+class NewVec2D:
+    def __init__(self,x,y):
+        self.x = x
+        self.y = y
+
+def Main():
+    vec = NewVec2D(3,9)
+    print "X : " + str(vec.x) + "\nY : " + str(vec.y)
+
+
+if __name__ == '__main__':
+    Main()
+
+
+
+

@@ -6,4 +6,10 @@ PYTHON
 -> Portable, Extensibel supports different programming paradigm.
 -> Install PyCharm IDE installation -> easy for multiple files access.
 
+Initially you need to download python 3.6 or what ever is the latest
+https://www.python.org/downloads/release/python-365/
+
+then install pycharm ide.
+https://www.jetbrains.com/pycharm-edu/download/#section=windows
+
 

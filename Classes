@@ -37,6 +37,32 @@ if __name__ == '__main__':
 
 if __name__ == '__main__':
     Main1()
+    
+    
+ -----------------------------------------------------------------------------------   
+    
+ class Enemy:
+    life = 2
+
+    def attach(self):
+        print("ouch")
+        self.life -= 1
+
+    def checklife(self):
+        if self.life <= 0:
+            print("i am dead")
+        else:
+            print(str(self.life) + " life left")
+
+enemy1 = Enemy()
+enemy2 = Enemy()
+
+enemy1.attach()
+enemy2.checklife()
+
+enemy1.checklife()
+enemy2.attach()
+
 
 class NewVec2D:
     def __init__(self,x,y):

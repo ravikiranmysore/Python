@@ -1,0 +1,28 @@
+#while loop
+bu = 5
+
+while bu < 100:
+    print(bu)
+    bu += 1
+
+#for loop
+food = ['bacon',"special",'car',"tomato"] #note its [] not {}
+
+for y in food[:2]:
+    print(y)
+    print(len(y))
+
+#range
+for x in range(10,20,5):
+    print(x)
+
+#break ,
+magicumber = 20
+
+for n in range(101):
+    if n is magicumber:
+        print(n)
+        break
+    else:
+        print("THIS IS:", n)
+

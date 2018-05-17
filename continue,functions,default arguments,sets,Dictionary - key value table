@@ -1,0 +1,88 @@
+#continue
+numbertaker = [2,45,6,3,9]
+
+for n in range(1,50):
+    if n in numbertaker:
+        continue
+    print(n)
+
+
+#functions
+def bark():
+    print("nothing to print")
+
+
+def bitcoin_is(brt):
+    amount = brt * 50
+    print(amount)
+
+bark()
+bitcoin_is(2)
+
+
+def one(two):
+    three = two/2 + 7
+    return three
+
+four = one(22)
+print("something",four,"nothing")
+
+#default arguments
+def get_gender(sex='Unknown'):
+    if sex is 'm':
+        sex = 'Male'
+    elif sex is 'f':
+        sex = 'female'
+    print(sex)
+
+get_gender('m')
+get_gender('f')
+get_gender()
+
+
+#keyword arguments
+def dumb_sentance(name= 'ravi',action= 'ate',item='apple'):
+    print(name,action,item)
+
+
+dumb_sentance()
+dumb_sentance(item='awesome') #you can change any argument
+
+
+#flexible amount of arguments
+def add_numbers(*args):
+    total = 0
+    for a in args:
+        total += a
+    print(total)
+
+add_numbers(3)
+add_numbers(3,32)
+add_numbers(3,43,545,546,88456)
+
+
+def health_calculator(age,apples,smoked):
+    answer = (100-age) + (apples * 3.5) - (smoked * 2)
+    print(answer)
+
+dummylist1 = [27,5,1]
+
+health_calculator(dummylist1[0],dummylist1[1],dummylist1[2])
+health_calculator(*dummylist1)
+
+
+#sets
+groceries = { 'a','b','c','d','e','f','g'}
+print(groceries)
+
+if 'i' in groceries:
+    print('you already have a')
+else:
+    print('oh yes,you need it')
+
+
+#Dictionary - key value table
+classmates = {'Tony ' : 'cool ', 'Emma ' : 'watson' ,'Lucy ' : 'wrong info'}
+
+for k,v in classmates.items():
+    print(k + v)

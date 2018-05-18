@@ -1,0 +1,46 @@
+
+# import pygame, time
+#
+# pygame.init()
+# window = pygame.display.set_mode((600,300))
+# myfont = pygame.font.SysFont("Arial",60)
+# lable = myfont.render("hello pygame!", 1,(255,255,0))
+# window.blit(lable,(100,100))
+# pygame.display.update()
+# time.sleep(5)
+# pygame.quit()
+
+import pygame
+from pygame.locals import *
+
+pygame.init()
+fps = pygame.time.Clock()
+window = pygame.display.set_mode((800,600))
+
+
+#Declaring colors,images,sounds, fonts
+
+#variable for keeping track of my game players etc
+quit = False
+
+#Main game loop
+while not quit:
+
+    #Process events
+    for event in pygame.event.get():
+        print(event)
+        if event.type == QUIT:
+            quit = True
+        elif event.type == KEYDOWN:
+            if event.key == K_ESCAPE:
+                quit = True
+
+    # Perform calculations
+
+
+    #Draw graphics
+    pygame.display.update()
+    fps.tick(25)
+
+#Loop over, game over
+pygame.quit()

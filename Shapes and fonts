@@ -1,0 +1,74 @@
+
+# import pygame, time
+#
+# pygame.init()
+# window = pygame.display.set_mode((600,300))
+# myfont = pygame.font.SysFont("Arial",60)
+# lable = myfont.render("hello pygame!", 1,(255,255,0))
+# window.blit(lable,(100,100))
+# pygame.display.update()
+# time.sleep(5)
+# pygame.quit()
+
+import pygame
+from pygame.locals import *
+
+pygame.init()
+fps = pygame.time.Clock()
+window = pygame.display.set_mode((800,600))
+
+
+#Declaring colors,images,sounds, fonts
+BLUE = (0,0,255)
+RED = (255,0,0)
+GREEN = (0,255,0)
+YELLOW =(255,255,0)
+BLACK = (0,0,0)
+WHITE = (0xFF,0xFF,0xFF)
+PINK = (0xFF,0x65,0xFD)
+
+#fonts
+ARIAL = pygame.font.SysFont("Arial",60)
+
+#init x and y
+x = 0
+y = 0
+
+#variable for keeping track of my game players etc
+quit = False
+
+#Main game loop
+while not quit:
+
+    #Process events
+    for event in pygame.event.get():
+        print(event)
+        if event.type == QUIT:
+            quit = True
+        elif event.type == KEYDOWN:
+            if event.key == K_ESCAPE:
+                quit = True
+        elif event.type == MOUSEMOTION:
+            (x,y) = event.pos
+
+    # Perform calculations
+    # x = 0
+    # y = 0
+
+    #Draw graphics
+    window.fill(BLACK)
+    label = ARIAL.render("Hello python",1,WHITE)
+    window.blit(label,(300,100)) # draw
+    label_cordinate = ARIAL.render("Mouse @" +str(x)+ ","+str(y), 1 ,WHITE)
+    window.blit(label_cordinate,(300,300)) # draw
+    pygame.draw.line(window,BLUE,(50,60),(50,160),10)
+    pygame.draw.rect(window,GREEN,(52,160,100,50),5) # x,y,width, height, hallowwidth
+    pygame.draw.circle(window,WHITE, (110,110),40,10) # centre of x,y  and r, width
+    pygame.draw.rect(window,YELLOW,(220,100,80,40))   # after (),can add width
+    pygame.draw.ellipse(window,PINK,(220,100,80,40))
+    pygame.draw.polygon(window,RED, ((20,20),(52,60),(500,60),(200,20)),5)
+    pygame.display.update()
+    fps.tick(25)
+
+#Loop over, game over
+pygame.quit()

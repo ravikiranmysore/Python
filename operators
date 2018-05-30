@@ -1,0 +1,166 @@
+ch='a' -> this is str, no char
+
+main(String[] args){} -> java consider everything as string
+
+None -> funtion return
+pass -> 
+
+\v -> verticle tab
+... -> 
+\f -> page down
+\r -> carriage return 
+
+s = 'sdkfjdjk fsdkjfh \"gdkfjdüa\" fsdklhf
+
+s = '''sdkfjdjk 'fsdkjfh' \"gdkfjdüa\" fsdklhf'''
+
+
+**********constant -> no constant in python********
+
+
+
+arthamatic operator:
++-*/ -> gives out float value
+10/2 - 5.0 -> always floating point number only.
+10//2 -> 5
+10.0//2 -> 5.0
+10**2 -> 100
+
+'duraga'+'sofT' -> duragasofT
+'durga'+10-> error
+'durga'*3 ->works
+* operator one should be string one should be number
+-----------
+relational operator -> <,>,<=,=>
+10>20 -> false
+'durga'<'ram' -> True (unicode is considered)
+True > False -> True
+'roja' < 'ramya' -> False(o != a)
+10 > True -> True
+10 > 'Dumbo' -> error
+10<20<30<40 -> chaining of relational operator.
+
+Equality operator
+---------------
+== and !=
+10==20 -> false
+10!=20 -> True
+10==True -> False because True is 1.
+False==False -> True
+10==20==30==40 -> False
+'a'==97 --> false
+10.10 == 10.1 -> True
+-----------------------------
+Logical Operators:
+Boolean:and, or, not
+Non-Boolean : 0 means false
+			  1/non zero means True
+			  empty string = false
+			  
+x and y -> if x evaluates to false then result is x otherwise returns y.
+
+The evaluation using the and and or operators follow these rules:
+
+    and and or evaluates expression from left to right.
+    with and, if all values are True, returns the last evaluated value. If any value is false, returns the first one.
+    or returns the first True value. If all are False, returns the last value
+not x 	Returns True if x is True, False otherwise
+x and y 	Returns x if x is False, y otherwise
+x or y 	Returns y if x is False, x otherwise
+
+10 or 20 -> 10(non-zero)
+0 or 20 -> 20(zero)
+
+not x:
+------
+not 10 -> False
+
+Bitwise operator:
+-----------------
+&,!,^,<<,>> --> applicable only for int and boolean.
+
+& ==> if both bits are 1 then 1 otherwise 0
+| ==> if atleast one bit is 1 then 1 otherwise 0
+^ ==> x or ==> if both bits are different then 1 otherwise 0
+~ ==> bitwise complement operator
+ 1 ==> 0 and 0 ==> 1
+ 
+ << == bitwise left shift -> right hand side vaccant cells filled with 0's
+ >> == bitwise right shift -> Left hand side vaccant cells filled with sign bits.
+ +ve numbers -> 0, -ve number -> 0
+ 
+print(~True) -> -2
+print(~4) -> -5
+print(not True) -> false
+-----------------------------
+Assignment operator:
+x=10
+a,b,c,d=10,20,30,40 
+x += 10 -> compound assignment operator.
+
+a,b,c,d=10,20,30 --> error because of d.
+
+******************increment and decrement operator is not available in python***********
+x=10
+print(x---) -> this is error.(- is taken as operator)
+
+only possible operators.
++=
+-=
+*=
+%=
+//= 
+**= power operator
+&=
+|=
+>>=
+<<= 
+
+
+a=4
+a &= 5 -> answer:4
+
+Ternary operator:
+?:
+
+nested if else:
+x = 10 if 20<30 else 40 if 50<60 else 70
+------------
+special operator:
+identity operator - 'is'  
+a = 10
+b = 10
+a is b -> True
+a is not b -> False
+
+r1 is r2 --> True
+r1 is not r2 --> True
+
+******"is" address comparison "==" is content comparison****
+
+# is comment.
+
+a=10
+b=2
+a+b
+a-b
+a*b
+a/b= 5.0 not 5
+a%b = 0
+a//b 
+a**b -> a power backward
+
+/  -> Floor Division operator
+// -> int or float
+   if both argument are int -> int
+   if arguments are float -> float
+   
+ 10/3 -> 
+
+
+'durga'+'3'    --> OK
+'durga'+str(3) --> OK
+
+* operator for str type
+String multiplication operator
+'durga'*3 -> 

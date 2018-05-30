@@ -1,0 +1,100 @@
+1.Everything in python is an object
+2.All fundamental data types are immutable.
+int,float,bool,complex,string are immutable
+----------------------------------
+
+bytes : 1.only allowed values are 0-256 bytes are allowed
+		2.immutable
+
+bytearray : 1.this is mutable.
+b = bytearray(x)
+
+bytearray are mutable.
+bytes are used for images, or videos
+
+
+bytes and bytearray available 
+
+list datatypes :
+insertion order should be preserved and duplicates are allowed.
+heterogeneous object are allowed.
+growable.
+mutable( you can add or remove)
+[** this is treated as list]
+
+-----------------> * operator is applicable everywhere in python,
+s*s --> error , you need the index, like s*2
+
+index = +ve or -ve
++ve from left to right.
+-ve from right to left.
+
+if you want to mutability you need to use tuple.
+tuple is same as list but mutable.
+
+
+l = (10,20,30,40) --> this is tuple "()"
+
+t[0]=53, this will get error, because it is immutable
+
+
+range() --> most commonly used function.
+1.Range datatypes represent a sequence of values
+2.Immutable
+
+Form1 : range(10)
+it represent value from 0 to 9.
+range will take only one argument
+range is immutable
+
+
+Form2: range(10,30)
+to represent numbers from 10 to 29.
+
+range(10)
+range(10,50)
+range(10,50,5) -> 5 is steps
+
+
+set : list and sets --> No duplicates and No order
+{} <- this is sets,[] <- this is list, () <- this is tuple
+  
+s={10,20,30,10,20,30} 
+output will be 10,20,30 --> No duplicates
+
+*******indexing and slicing is not applicable to sets*****
+sets are mutable.
+
+
+
+bytes and bytearray -> m and im
+list and tuple  -> m and im
+set and frozenset -> m and im
+
+s={10,20,30}
+fs=frozenset(s)
+fs -> order is not maintained
+fs.add(50) --> error because it is immutable.
+
+dict: 
+words -> meaning
+key -> values
+
+list, tuple,set,fronzenset, range,byte,bytesarray = independent objects/individual object
+
+
+[] -> List
+() -> tuple
+{} -> sets
+{} -> dict
+
+d= {key:value,key:value,....}
+
+*******d={} -> empty dictionary always*****
+*******s= set() -> this is empty set******
+
+
+d[100]="bunny"
+key and value are printed.
+
+dict is mutable, but order not important

@@ -1,0 +1,67 @@
+LOGGING
+---------
+
+logging has levels :
+------------------
+1.CRITICAL ==> 50 level
+2.ERROR == > 40
+3.WARNING ==> 30
+4.INFO == >20
+5.DEBUG ==> 10
+6.NOTSER ==> 0
+
+
+
+import logging
+logging.basicConfig(filename='log.txt',level=logging.WARNING)
+print("Python logging demo")
+logging.debug("DEBUG Message")
+logging.info("info Message")
+logging.warning("warning Message")
+logging.error("error Message")
+logging.critical("critical Message")
+
+without level
+-------------
+import logging
+logging.basicConfig(filename='log.txt')
+print("Python logging demo")
+logging.debug("DEBUG Message")
+logging.info("info Message")
+logging.warning("warning Message by default")
+logging.error("error Message")
+logging.critical("critical Message")
+
+output: Warning is usally with highest level
+WARNING:root:warning Message 
+ERROR:root:error Message
+CRITICAL:root:critical Message
+WARNING:root:warning Message by default
+ERROR:root:error Message
+CRITICAL:root:critical Message
+
+
+import logging
+logging.basicConfig(filename='log.txt',level=logging.INFO)
+logging.info("A new request")
+try:
+    x=int(input("Enter first Number:"))
+    y=int(input("Enter Second Number:"))
+    print(x/y)
+except ZeroDivisionError as msg:
+    print("Cannot divide by 0")
+    logging.exception(msg)
+except ValueError as msg:
+    print("Enter only int value:")
+    logging.exception(msg)
+logging.info("Request Processing complete")
+
+
+Debugging:
+defect/Bug : Mismatch between expected and actual result.
+
+use print statement to get logged.
+
+assert statement -> for debugging
+1.Simple Version
+2.Very simple Version(Argumented Version)

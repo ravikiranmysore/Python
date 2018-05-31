@@ -13,3 +13,31 @@ then install pycharm ide.
 https://www.jetbrains.com/pycharm-edu/download/#section=windows
 
 
+How to install python
+---------------------
+1.Concise code
+2.Rich Libraries(Like Batteries)
+3.Free and open source
+
+Python - 3.6.5 -> developed as independent language
+Python - 2.7.14 -> different to py-3
+There is no compatibility between these two.
+
+python 3 is recommended. 
+
+Path : for execution of .exe file you need to add path to EV,but not for python.
+
+Python is a REPL Tool: Read,Evaluate,Print,Loop
+Python IDLE - 
+
+editplus,notepad you can code and run using py xxx.py
+
+Better to use IDLE,the using IDE untill you develope competance
+Core python
+Advance python
+
+Jupyter - Anaconda 
+
+python doesnt have interpreter.
+
+

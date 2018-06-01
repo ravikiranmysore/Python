@@ -1,0 +1,100 @@
+Class in Python
+------------
+
+class Employee:
+    def __init__(self,eno,ename): #constructor
+        self.eno=eno
+        self.ename=ename
+    def display(self):
+        print('Employee No:',self.eno)
+        print('Employee Name:',self.ename)
+
+e1=Employee(100,'Durga') #object creation
+e1.display()
+
+----------------------------
+self means current object -> object related method(like this in c++)
+
+
+Methods:
+1.Any name for the method
+2.Will executed if we call particular method
+3.Per object, method can be call multiple time.
+4.inside method we can write business logic
+
+Constructor:
+1.Should be __init__
+2.Calls Automatically when ever we create objects
+3.Per object,constructor will be executed only once
+4.we have to declare and initialize instance variable
+
+
+Types of Varible inside Classes
+----------------------
+1.Instance variable(Non static)
+2.Static variable
+3.Local variable
+
+1.Instance Variable:
+a.If the value of variable is varied from object to object
+b.For every object a separate copy of instance variable is created
+c.In general inside constructor we have to declare by using "self"(not a keyword)
+d.To access instance variable:
+   Within class by using self.
+   Outside class by using reference variable.
+e.Each objects has its own instances
+f.Constructor 
+ 
+Object Reference: __dict__
+ 
+---------------------------------------------------- 
+ class Student:
+    def __init__(self,name,rollno,marks): #these are varibales/arguments
+        self.name=name #instance varible
+        self.rollno= rollno
+        self.marks=marks
+    def display(self): #self->instance variable access
+        print('Student Name : ',self.name)
+        print('Student rn : ',self.rollno)
+        print('Student marks : ',self.marks)
+s1=Student('Durga',101,90)
+s2=Student('Ra',11,92)
+s3=Student('Vi',103,99)
+s1.display()
+s2.display()
+s3.display()
+print(s1.name,s1.rollno,s1.marks)
+print(s1.__dict__)#Object reference
+-----------------------------------------------------------
+class Test:
+    def __init__(self):
+        self.x=10
+t1=Test()
+t2=Test()
+print(t1.x,t2.x)
+t1.x=555
+print(t1.x,t2.x) #Separate copy for each
+-------------------------------------------------------------
+
+7.Where we can declare instance Variable?
+  1.Inside constructor.
+  2.Inside instance method
+  3.Outside of class by using reference variable.
+  
+  ---------------------------------------------
+class Test:
+    def __init__(self,name,age,tech):
+        self.name=name
+        self.age=age
+        self.tech=tech
+        
+s1=Test('Durga',48,'python')
+s2=Test('rav',58,'python2')
+s1.newObj1='Sunny' #can create objects on fly
+s1.newObj2='Ravi'
+s2.newObj3='something' #can create objects on fly
+s2.newObj4='nothing'
+print(s1.__dict__)
+print(s2.__dict__)
+
+-------------------------------------------------------------

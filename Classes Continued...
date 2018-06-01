@@ -1,0 +1,123 @@
+How to remove instance variable from an object:
+---------------------------------------------
+del self.variablename
+del objectreference.varibalename
+----------------------------------------------
+
+class Test:
+    def __init__(self):
+        self.a = 10
+        self.a1 = 1000
+        self.a2 = 100
+        self.a5 = 10000
+t1=Test()
+t2=Test()
+del t1.a5
+print('t1: ',t1.__dict__)
+print('t2: ',t2.__dict__)
+
+--------------------------------------------
+instance variable vs Static variable
+-------------------------------------
+instance -> for every object separate copy will be created.
+static -> single copy is created and shared for all object.
+
+
+Various places to declare static variable:
+1.Within the class directly
+2.Inside constructor by using class name
+3.Inside instance method by using class name
+
+class Test:
+    def __init__(self):
+       self.b=20
+       Test.c=30
+    def m1(self):
+        self.d=40
+        Test.e=50
+t1=Test()
+t1.m1()
+print(Test.__dict__)
+
+4.Inside classmethod by using cls(any name) variable.
+class Test:
+    a=10
+    def __init__(self):
+       self.b=20
+       Test.c=30
+    def m1(self):
+        self.d=40
+        Test.e=50
+    @classmethod # Related to class object
+    def m2(clsy): #can use any name not necessarily cls
+        clsy.e=56
+        Test.l=59
+t1=Test()
+t1.m1()
+Test.m2()
+print(Test.__dict__)
+# There are 5 static varible are present
+
+5.Inside static method by using class name:
+class Test:
+    a=10
+    def __init__(self):
+       self.b=20
+       Test.c=30
+    def m1(self):
+        self.d=40
+        Test.e=50
+    @classmethod # Related to class object
+    def m2(clsy): #can use any name not necessarily cls
+        clsy.e=56
+        Test.l=59
+    @staticmethod
+    def m3(): # this is considered static by default
+        Test.h=95
+t1=Test()
+t1.m1()
+Test.m2()
+Test.m3()
+print(Test.__dict__)
+# There are 5 static variable are present
+
+6.Outside of class by using classname
+----------------------------- 
+class Test:
+    a=10
+    # this is instancemethod 
+    def __init__(self):
+       self.b=20
+       Test.c=30
+    def m1(self):
+        self.d=40
+        Test.e=50
+    @classmethod # Related to class object, '@' -> reference
+    def m2(clsy): #can use any name not necessarily cls
+        clsy.e=56
+        Test.l=59
+    @staticmethod
+    def m3(): # this is considered static by default
+        Test.h=95
+t1=Test()
+t1.m1()
+Test.m2()
+Test.m3()
+Test.i=53
+print(Test.__dict__)
+# There are 5 static varible are present
+------------------------------------------------------
+
+class Test:
+    a=10
+    # this is instancemethod 
+    def __init__(self):
+       self.b=20
+t1=Test()
+t2=Test()
+t2.a+=1 # This is also possible
+print(t2.a)
+print(Test.a)
+print(t1.a)
+
+---------------------------

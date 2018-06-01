@@ -1,0 +1,261 @@
+Regular Expressions:
+----------------------
+Pattern matching:
+Group of string which fallows a particular pattern.
+Its a declarative mechanism.
+
+RE is Language independent.
+
+1.Validations
+2.Pattern matching (ctrl f,grep)
+3.lexical Analysis(scanning or tokenization),Syntax analysis(Parsing),semantic analysis,ICG,CO etc
+
+
+1.compile() function:
+--------------------
+Regex object :
+
+import re
+pattern=re.compile('python')
+print(type(pattern))
+#<class '_sre.SRE_Pattern'>
+
+This is SRE pattern.
+
+2.finditer():
+-----------------
+matcher=pattern.finditer('learning python is very easy..')
+ 1.start(): start index of the match
+ 2.end() -> end+1 index of the match
+ 3.Group() -> Returns matched string
+
+
+import re
+count=0
+#pattern=re.compile('ab')
+matcher=re.finditer('ab','abaababa')
+for m in matcher:
+    count=count+1
+    print('start:{}, end:{}, group:{} '.format(m.start(),m.end(),m.group())) # very imp {}
+print('THe number of occurances : ',count)
+---------------------------------
+start:0, end:2, group:ab 
+start:3, end:5, group:ab 
+start:5, end:7, group:ab 
+THe number of occurances :  3
+--------------------------------------------------
+
+
+
+Character Class:
+[abc]= search for either a or b or c
+[^abc] = Except a and b and c(to search remaining symbol)
+[a-z] = Lower case 
+[A-Z] = Upper case
+[a-zA-Z] =  both 
+[0-9] = digits
+[a-zA-Z0-9] = any alpha-numerics
+[^a-zA-Z0-9] = for special symbols
+
+
+
+import re
+matcher=re.finditer('[^abc]','a7b@k9z')
+for m in matcher:
+    print(m.start(),'....',m.group())
+
+output : 
+1 .... 7
+3 .... @
+4 .... k
+5 .... 9
+6 .... z
+
+---------------------------------------
+
+import re
+matcher=re.finditer('[abc]','a7b@k9z')
+for m in matcher:
+    print(m.start(),'....',m.group()) #group methods returns matched item
+
+
+
+output : 
+0 .... a -> 0 is start,a is group
+2 .... b
+---------------------------------------
+
+import re
+matcher=re.finditer('[a-zA-Z0-9]','a7b@K^!"9z')
+for m in matcher:
+    print(m.start(),'->', m.group())#group methods returns matched item
+
+----------------
+
+Predefined character classes:
+--------------
+\s --> space character
+\S --> except space character
+\d --> any digits
+\D -> except digits
+\w  _> any word character(alpha numeric character)
+\W -> any character except word(special character)
+.   --> every character
+
+import re
+matcher=re.finditer('\S','a7b@K^!  "9z') #except space all the remaining
+for m in matcher:
+    print(m.start(),'->', m.group())#group methods returns matched item
+
+
+import re
+matcher=re.finditer('\W','a7b@K^!  "9z') #any character except word(special character)
+for m in matcher:
+    print(m.start(),'->', m.group())#group methods returns matched item
+
+
+
+import re
+matcher=re.finditer('.','a7b@K^!  "9z') #every character
+for m in matcher:
+    print(m.start(),'->', m.group())#group methods returns matched item
+	
+-----------------------------------
+
+Qualifiers:
+-----------
+the number of occurances
+a --> exactly one 'a'
+a+ --> atleast one 'a'
+a* --> any number of 'a' including zero number also
+a? --> atmost one 'a' ,either one 'a' pr zero number of a's
+a{n} --> exactly n numbers of 'a'
+a{m,n} -> Minimum m number of a's and maximum n number of a's
+a$ ->  Ends with the character 
+------------------------------
+import re
+count=0
+matcher=re.finditer('a+','abaabaaab')
+for m in matcher:
+    count+=1
+    print(m.start(),'->', m.group())#group methods returns matched item
+print('Count : ',count)
+
+Output:
+0 -> a
+2 -> aa
+5 -> aaa
+Count :  3
+-------------------------------
+import re
+count=0
+matcher=re.finditer('a*','abaabaaab')
+for m in matcher:
+    count+=1
+    print(m.start(),'->', m.group())#group methods returns matched item
+print('Count : ',count)
+
+Output:
+0 -> a
+1 -> 
+2 -> aa
+4 -> 
+5 -> aaa
+8 -> 
+9 -> 
+Count :  7
+ -------------------------------
+ 
+ a? --> atmost one 'a' ,either one 'a' pr zero number of a's
+ 
+import re
+count=0
+matcher=re.finditer('a?','abaabaaab')
+for m in matcher:
+    count+=1
+    print(m.start(),'->', m.group())#group methods returns matched item
+print('Count : ',count)
+
+ 
+output: 
+0 -> a
+1 -> 
+2 -> a
+3 -> a
+4 -> 
+5 -> a
+6 -> a
+7 -> a
+8 -> 
+9 -> 
+Count :  10
+-------------------------------
+ a{n} --> exactly n numbers of 'a'
+ 
+
+ import re
+count=0
+matcher=re.finditer('a{3}','abaabaaab')
+for m in matcher:
+    count+=1
+    print(m.start(),'->', m.group())#group methods returns matched item
+print('Count : ',count)
+
+Output:
+ 5 -> aaa
+Count :  1
+
+------------------------
+import re
+count=0
+matcher=re.finditer('a{1,3}','abaabaaab')
+for m in matcher:
+    count+=1
+    print(m.start(),'->', m.group())#group methods returns matched item
+print('Count : ',count)
+----------------------------------------------
+
+import re
+count=0
+matcher=re.finditer('b$','abaabaaab')
+for m in matcher:
+    count+=1
+    print(m.start(),'->', m.group())#group methods returns matched item
+print('Count : ',count)
+
+Output:
+8 -> b
+Count :  1
+
+----------------------------------------------
+
+
+Important functions of re module:
+---------------------------------
+1.match()
+2.fullmatch()
+3.search()
+findall()
+5.finditer()
+6.sub()
+7.subn()
+8.split()
+9.complie()
+
+
+
+SEACH():
+-------------
+import re
+s=input('Enter parrern to check: ')
+m=re.search(s,'abaabaaab')
+if m!=None:
+    print('match is available')
+    print('first occurance with start index:{} and end index:{}'.format(m.start(),m.end()))
+else:
+    print('full string is not matched')
+
+output:
+Enter parrern to check: abaabaaab
+match is available
+first occurance with start index:0 and end index:9

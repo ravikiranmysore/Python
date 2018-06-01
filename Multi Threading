@@ -1,0 +1,170 @@
+Multi Threading:
+----------------
+MultiTasking: executing several tasks simultaneously is the concept of multitasking.
+
+2 types of multitasking:
+1.Process based multitasking
+2.Thread based multitasking
+
+1.Process based multitasking : 
+Executing several task simultaneously where each task is a separate independent process.
+ 1.Downloading --> editor related process
+ 2.Executing   --> separate process
+ 3.Listening songs --> audio process
+ 
+
+2.Thread based multitasking:
+Executing several task simultaneously where each task is a separate independent part of same program.
+each part is called Thread.
+
+Advantage : reduce execution time and performance.
+
+Animation,multimedia graphics, video games,web servers etc
+
+Jboss servers -> process gmail -> simultaneously executes
+
+---------
+Thumb rule : Where ever a group of independent jobs are required, use thread.
+
+----
+1 baby--> 1 mother ,9 months.
+9 mother -> 1 month.
+
+Thread 
+1.Flow of execution 
+2.for every thread ,there is job/task to performance
+3.Job 
+
+***********main thread is always there in python.**********
+
+The ways of creating thread in python:
+3 ways
+1.Creating a thread without using any class
+2.Creating a thread by extending thread class
+3.Creating a thread without extending thread class
+
+Main thread creates child thread object.
+Child thread object is responsible to execute display method.
+t.start() -> main and child thread starts
+
+***********
+from threading import *
+def display():
+    print('display funtion - Thread : ',current_thread().getName())
+
+t=Thread(target=display)
+t.start()
+print('Child funtion - Thread : \n',current_thread().getName())
+****************
+
+from threading import *
+def display():
+    for i in range(10):
+        print('Child Thread')
+
+t=Thread(target=display)
+t.start()
+for i in range(10):
+    print('Main Thread \t')
+	
+**********************
+Output: Depends on the O.S
+Main Thread 	Child Thread
+
+Main Thread 	Child Thread
+
+Main Thread 	Child Thread
+
+Main Thread 	Child Thread
+
+Main Thread 	Child Thread
+
+Main Thread 	Child Thread
+
+Main Thread 	Child Thread
+
+Main Thread 	Child Thread
+
+Main Thread 	Child Thread
+
+Main Thread 	Child Thread
+------------------------------------
+
+Threading using Class
+---------------------
+from threading import *
+class MyThread(Thread):
+    def run(self):
+        for i in range(10):
+            print('Child Thread-1\t') #this is job of thread
+t=MyThread()
+t.start()
+for i in range(10):
+    print('Main Thread-1')
+	
+*******************************************
+you need to use target if not using class
+-----
+from threading import *
+class Test:
+    def display(self):
+        for i in range(10):
+            print('Child Thread-2 \t')
+obj=Test()
+t=Thread(target=obj.display)
+t.start()
+for i in range(10):
+    print('Main Thread-2 \t')
+-------
+
+
+New example:
+-------------
+import time
+def doubles(numbers):
+    for n in numbers:
+        time.sleep(1)
+        print('Double:',2*n)
+
+def squares(numbers):
+    for n in numbers:
+        time.sleep(1)
+        print('Square:',n*n)
+numbers=[1,2,3,4,5,6]
+begintime=time.time()
+doubles(numbers)
+squares(numbers)
+endtime=time.time()
+print('The total time taken:',endtime-begintime)
+
+------------------
+
+
+from threading import *
+import time
+def doubles(numbers):
+    for n in numbers:
+        time.sleep(1)
+        print('Double: \t',2*n)
+
+def squares(numbers):
+    for n in numbers:
+        time.sleep(1)
+        print('Square: \t',n*n)
+numbers=[1,2,3,4,5,6]
+begintime=time.time()
+t1=Thread(target=doubles,args=(numbers,))# this is tuple
+t2=Thread(target=squares,args=(numbers,))
+t1.start()
+t2.start()
+t1.join()
+t2.join()
+endtime=time.time()
+print('The total time taken:',endtime-begintime)
+
+----------------------------------
+How to get and set name of thread
+-----------
+t.getName()
+t.setName(name) or t.name
+-----------------------------------

@@ -1,0 +1,86 @@
+findall ->
+import re
+l=re.findall('\W','a7# sdj§9')
+print(l)
+  
+finditer():
+
+6.Sub() -> substitution /Replace
+-------------------------------
+re.sub(regex,replacement,targetstring)
+
+import re
+l=re.sub('\W','#','a7? sdj§9')
+print(l)
+------------------------------
+
+7.Subn -> no. of replacement
+-----------------------------
+
+t=re.subn(regex,replacement,targetstring)
+
+tuple(resultingstring, number of replacements) t[0],t[1]
+
+import re
+l=re.subn('\d','xxx','a7?56sdj§9')
+print(l)
+print(l[0])
+print(l[1])
+
+gmail[.]com ---> capture/search easily.
+
+re.IGNORECASE --> to ignore cases.
+--------------------------------------
+
+
+import re
+s=input('Enter identifier to validate:')
+m=re.fullmatch('[a-k][0369][a-zA-Z0-9#]*',s)
+if m!=None:
+    print(s,'is valid identifier')
+else:
+    print(s,'is valid identifier')
+
+
++ -> atleast once eg: a+
+
+
+import re
+s=input('Enter identifier to validate:')
+m=re.fullmatch('[6-9]\d{9}',s)
+if m!=None:
+    print(s,'is valid identifier')
+else:
+    print(s,'is valid identifier')
+
+--------------
+import re,urllib
+import urllib.request
+sites=['http://redbus.com']
+for s in sites:
+       print('Searching...',s)
+       u=urllib.request.urlopen(s)
+       text=u.read()
+       title=re.findall("<title>.*</title>",str(text),re.IGNORECASE)
+       print(title[0])
+
+
+import re,urllib
+import urllib.request
+u=urllib.request.urlopen("https://www.redbus.in/info/contactus")
+text=u.read()
+numbers=re.findall('[0-9]{3}[-][0-9]{8}',str(text),re.IGNORECASE) #7 min ,+ more than that ok
+for s in numbers:
+       print(s)
+
+
+import re
+s=input('Enter mail id : ')
+#m=re.fullmatch('\w[a-zA-Z0-9_.]*@[a-z0-9]+[.][a-z]+',s)
+m=re.fullmatch('\w[a-zA-Z0-9_.]*@[gamil|rediffmail]+[.][a-z]+',s)
+#TS07EA7777 --- > TS[012][0-9][A-Z]{2}\d{4}
+if m!= None:
+    print('valid mail id')
+else:
+    print('Invalid mail id')
+

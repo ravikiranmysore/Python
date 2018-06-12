@@ -1,0 +1,109 @@
+
+Python Database Programming(PDBC):
+---------------------------------
+
+It is very common requirement to save data for the future purpose.
+
+1.Temporary storage area.
+	PVM memory area(python virtual machine)
+2.Permanent storage area.
+	a.File system
+	b.Databases
+	
+	
+1.File systems:
+---------------
+best suitable for small storage.
+Limitations:
+------------
+1.Huge data not possible.
+2.No querry language support.
+3.No Security.
+4.NO mechanism to prevent duplicate data
+   Data inconsistency problems.
+
+
+Databases:
+1.Best for large amount of data(but not very large)
+2.QL support.
+3.Security
+4.Tables and duplicates can be made.
+Limitations:
+------------
+1.Cannot hold very huge of data (almost 4gb).
+2.Structured data but not for unstructured data and semi-structured data.
+
+Advanced data storage technologies -> for huge amount of data
+
+PDBC:
+-----
+cx_oracle - Oracle db
+pymssql -  MS server
+pymysql  - mysql
+
+
+Standard steps to communicate with database:
+-------------------------------------------
+1.Import that database specific module.
+  Import cx_oracle
+  import pymysql etc
+2.Establish connection between database and python program.
+  con=cx_Oracle.connect(database information);
+  cott/tiger -> username/password
+  eg: con = cx_Oracle.connect('scott/tiger@localhost')
+3.Executing -> Cursor object is needed
+  cursor=con.cursor()
+4.Execute our sql querry
+   cursor.execute(sqlquery) --> single query
+   cursor.executescript(sqlqueries) -> To execute string of sql queries separated by :
+   cursor.executemany() -> ro execute parameterized query
+5.Fetch the results
+  cursor.fetchone() -> to fetch only one row
+  cursor.fetchall() -> all row
+  cursor.fetchmany(n) -> n rows
+6. Commit() 
+   rollback() -> undo
+7. cursor.close() and con.close().
+
+connect(),cursor(),execute(),executescript(),executemany(),fetchone(),fetchall(),featchmany(),commit(),rollback(),close()
+
+Working with Oracle database:
+-------------------------------
+Python db is different than DB language.
+The middle drivers is "cx_Oracle"
+
+install cx_Oracle -> pip install
+
+
+To install on windows :
+C:\Program Files\Python36\Scripts>pip install cx_Oracle
+
+is the way to install , pip is already present.
+  
+  
+ SQL vs Flatfile
+ 
+DDL commands : Creating,drop(DDL(Data Definition Language))
+DML commands : compulsory we required to perform commit operation.
+
+to insert multiple records into database
+executemany() method
+insert into employees values(:eno,:enmae,:esal,:eaddr)
+records=[(200,'sunny',2000,'Mumbai'),(...),(....)]
+cursor.executemany(query,records)
+
+#.to insert multiple rows with dynamic input from keyboard
+  query='insert into employees values(%d,%s,%f,%s')'
+  cursor.execute(query, %(eno,ename,.....))
+  con.commit()
+
+create table,drop table, insert operation, update,delete, select -> operations
+
+fetch : 
+query="select * from employees"
+cursoe.execute(query)
+row=cursor.fetchone()
+while row is not None:
+  print(row)
+  row=cursor.fetchone()
+  
